@@ -24,6 +24,11 @@ labels = data.Class.unique()
 #Getting class sizes
 size = data.Class.value_counts().values
 
+fig, ax = plt.subplots()
+ax.pie(size, labels=labels, autopct='%1.3f%%')
+ax.set_title('Target Variable Value Counts')
+plt.show()
+
 data['Class'].value_counts().plot(
     kind='pie', autopct='%1.3f%%', title='Target Variable Value Counts'
 )
